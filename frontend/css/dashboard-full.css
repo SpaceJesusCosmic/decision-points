@@ -1,0 +1,157 @@
+/* Full Dashboard Styles */
+.dashboard-full {
+    padding: 0;
+      background: var(--gradient-background);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+
+.dashboard-full::before {
+    content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(circle, #ff5400 0%, rgba(217,4,41,0.0) 70%);
+      opacity: 0.10;
+      filter: blur(100px);
+      z-index: 1;
+  }
+
+.dashboard-container {
+    display: flex;
+      align-items: stretch;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+  }
+
+.dashboard-layout {
+    width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+/* Added for Dashboard.jsx refactoring */
+
+.dashboard-loading,
+.dashboard-error {
+  padding: 40px;
+  text-align: center;
+}
+
+.dashboard-loading {
+  color: #fff;
+}
+
+.dashboard-error {
+  color: #ff4713; /* Or use a variable like var(--color-error) if defined */
+}
+
+.dashboard-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+.dashboard-card {
+  background: rgba(13, 13, 13, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.2); /* Consider using CSS variables */
+}
+
+.dashboard-card-revenue {
+  grid-column: 1 / 3;
+}
+
+.dashboard-card-customer {
+  grid-column: 3 / 4;
+}
+
+.dashboard-card-insights {
+  grid-column: 1 / 4;
+}
+
+.dashboard-card-title {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff; /* Consider using CSS variables */
+}
+
+.dashboard-chart-container {
+  height: 220px;
+}
+
+.dashboard-chart-container-bar {
+  height: 220px;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-insights-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dashboard-insight-item {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(30, 0, 0, 0.5); /* Consider using CSS variables */
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dashboard-insight-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 71, 19, 0.2); /* Consider using CSS variables */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-insight-icon {
+  color: #ff4713; /* Consider using CSS variables */
+  font-size: 16px;
+}
+
+.dashboard-insight-text {
+  color: #fff; /* Consider using CSS variables */
+}
+
+.dashboard-no-data {
+  grid-column: 1 / 4;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-secondary); /* Assumes this variable exists */
+  background: rgba(13, 13, 13, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-no-data-title {
+  margin-bottom: 10px;
+}
+
+/* Chart.js specific styles (already partially handled by options, but can be overridden) */
+/* Example: .dashboard-card .chartjs-render-monitor { ... } */
